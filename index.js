@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const connectDB = require("./src/configs/dbconn");
 const user_routes = require("./src/routes/user-routes");
 const movie_routes = require("./src/routes/movie-routes");
+const review_routes = require("./src/routes/reviews-routes");
 const app = express();
 
 app.use(express.json());
@@ -14,6 +15,7 @@ connectDB();
 //Routes
 app.use("/", user_routes);
 app.use("/", movie_routes);
+app.use("/", review_routes);
 
 //If connected to database run server.
 mongoose.connection.once("open", () => {
