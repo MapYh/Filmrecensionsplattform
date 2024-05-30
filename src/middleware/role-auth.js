@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const auth = (req, res, next) => {
+const adminAuth = (req, res, next) => {
   const token = req.header("Authorization");
 
   if (!token) {
@@ -16,16 +16,43 @@ const auth = (req, res, next) => {
       process.env.JWT_SECRET
     );
     req.user = decoded;
-    console.log(req.user);
-    next();
+
+    if (req.user.role == "admin") {
+      next();
+    } else {
+      res.status(401).json({ Error_message: "Invalid role for request." });
+    }
   } catch (error) {
     console.error("Invalid token:", error);
     res.status(401).send("Invalid token");
   }
 };
 
-const admin_auth = () => {};
+const userAuth = (req, res, next) => {
+  const token = req.header("Authorization");
 
-const user_auth = () => {};
+  if (!token) {
+    return res
+      .status(401)
+      .json({ message: "Access denied! Token is required" });
+  }
 
-module.exports = { auth };
+  try {
+    const decoded = jwt.verify(
+      token.replace("Bearer ", ""),
+      process.env.JWT_SECRET
+    );
+    req.user = decoded;
+
+    if (req.user.role == "user" || req.user.role == "admin") {
+      next();
+    } else {
+      res.status(401).json({ Error_message: "Invalid role for request." });
+    }
+  } catch (error) {
+    console.error("Invalid token:", error);
+    res.status(401).send("Invalid token");
+  }
+};
+
+module.exports = { adminAuth, userAuth };

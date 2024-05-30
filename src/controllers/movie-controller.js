@@ -18,7 +18,6 @@ async function addAMovieToDb(req, res) {
       .json({ Message: "A movie with that title already exists." });
   }
   try {
-    console.log("Here");
     const result = await Movie.create({
       title: title,
       director: director,
@@ -36,4 +35,59 @@ async function addAMovieToDb(req, res) {
   }
 }
 
-module.exports = { addAMovieToDb };
+async function getAllMoviesInDb(req, res) {
+  try {
+    const result = await Movie.find();
+    if (result) {
+      console.log(result);
+      res.status(201).json({ success: true, Message: result });
+    } else {
+      res
+        .status(500)
+        .json({ success: false, Message: "Could not find movies." });
+    }
+  } catch (error) {
+    res.status(500).json({ Message: "Internal server error." });
+  }
+}
+
+async function getMovieById(req, res) {
+  try {
+    const result = await Movie.findById(req.params.id);
+    if (result) {
+      console.log(result);
+      res.status(201).json({ success: true, Message: result });
+    } else {
+      res.status(500).json({
+        success: false,
+        Message: `Could not find movie with id: ${id}.`,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ Message: "Internal server error." });
+  }
+}
+
+async function updateAMovieById(req, res) {
+  try {
+    const result = await Movie.findById(req.params.id);
+    if (result) {
+      console.log(result);
+      res.status(201).json({ success: true, Message: result });
+    } else {
+      res.status(500).json({
+        success: false,
+        Message: `Could not find movie with id: ${id}.`,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ Message: "Internal server error." });
+  }
+}
+
+module.exports = {
+  addAMovieToDb,
+  getAllMoviesInDb,
+  getMovieById,
+  updateAMovieById,
+};
