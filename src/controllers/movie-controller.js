@@ -69,15 +69,41 @@ async function getMovieById(req, res) {
 }
 
 async function updateAMovieById(req, res) {
+  const { title, genre, releaseYear, director } = req.body;
   try {
-    const result = await Movie.findById(req.params.id);
+    const result = await Movie.findByIdAndUpdate(req.params.id, {
+      title: title,
+      director: director,
+      releaseYear: releaseYear,
+      genre: genre,
+    });
     if (result) {
       console.log(result);
       res.status(201).json({ success: true, Message: result });
     } else {
       res.status(500).json({
         success: false,
-        Message: `Could not find movie with id: ${id}.`,
+        Message: `Could not update movie with title: ${title}.`,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ Message: "Internal server error." });
+  }
+}
+
+async function deleteAMovieById(req, res) {
+  try {
+    const result = await Movie.findByIdAndDelete(req.params.id);
+    if (result) {
+      console.log(result);
+      res.status(201).json({
+        success: true,
+        Message: `Deleted a movie with the id: ${req.params.id}`,
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        Message: `Could not delete movie with id: ${req.params.id}.`,
       });
     }
   } catch (error) {
@@ -90,4 +116,5 @@ module.exports = {
   getAllMoviesInDb,
   getMovieById,
   updateAMovieById,
+  deleteAMovieById,
 };
