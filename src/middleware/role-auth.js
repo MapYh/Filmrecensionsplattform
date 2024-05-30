@@ -1,4 +1,4 @@
-/* const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const auth = (req, res, next) => {
@@ -16,6 +16,7 @@ const auth = (req, res, next) => {
       process.env.JWT_SECRET
     );
     req.user = decoded;
+    console.log(req.user);
     next();
   } catch (error) {
     console.error("Invalid token:", error);
@@ -23,4 +24,8 @@ const auth = (req, res, next) => {
   }
 };
 
-module.exports = { auth }; */
+const admin_auth = () => {};
+
+const user_auth = () => {};
+
+module.exports = { auth };

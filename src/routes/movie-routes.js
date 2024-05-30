@@ -1,9 +1,8 @@
 const { Router } = require("express");
-const { signup, login } = require("../controllers/user-controller");
+const { addAMovieToDb } = require("../controllers/movie-controller");
 const { auth } = require("../middleware/role-auth");
 const router = Router();
 
-router.use("/signup", signup);
-router.use("/login", login);
+router.use("/movies", addAMovieToDb);
 
 module.exports = router;
