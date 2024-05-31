@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "67c74d19-4939-4da0-b935-0af70c5ab985",
+		"name": "Film recensioner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33910593"
+	},
+	"item": [
+		{
+			"name": "Add a movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcwOTA1MjgsImV4cCI6MTcxNzA5MTEyOH0.FEzuSox6oQi3CDNoLp4K-xFqrAFV0RRx9DDGEjm_LMY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"test-movie-three-\",\r\n    \"director\": \"test\",\r\n    \"releaseYear\": 2022,\r\n    \"genre\": \"Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MDkwODg1LCJleHAiOjE3MTcwOTE0ODV9.T6GAPIWJcHMYq7sb4YFrdW3q6UGGcv91l3W6Z5omN3E"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MDkwODg1LCJleHAiOjE3MTcwOTE0ODV9.T6GAPIWJcHMYq7sb4YFrdW3q6UGGcv91l3W6Z5omN3E"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies/6658781613c9a2c552503c8b",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies",
+						"6658781613c9a2c552503c8b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a movie by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcwOTI5NjYsImV4cCI6MTcxNzA5MzU2Nn0.ALR0XTXhUwRKjlfcw8I3y-hvZEHjyH0EByHG_2c9o74"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"title\":\"test-movie-update-come-again-plusdlc\",\r\n    \"director\": \"test\",\r\n    \"releaseYear\": 2022,\r\n    \"genre\": \"Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies/6658b95fc4b6ba1078e867bd",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies",
+						"6658b95fc4b6ba1078e867bd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all reviews to a movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTg1NzIxLCJleHAiOjE3MTcxODYzMjF9.piegnLwbUyiR5fKNou0Vv7ADSbuJNDEVj_d6yBKYiyg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies/66587779126f1790cac0c999/reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies",
+						"66587779126f1790cac0c999",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a movie by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcwOTI5NjYsImV4cCI6MTcxNzA5MzU2Nn0.ALR0XTXhUwRKjlfcw8I3y-hvZEHjyH0EByHG_2c9o74"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/movies/6658b6d477c4029d5e8c87e2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"movies",
+						"6658b6d477c4029d5e8c87e2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a review to a movie",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');\r",
+							"\r",
+							"pm.globals.set(\"today\", moment().format(\"MM/DD/YYYY\"));\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTg1NzIxLCJleHAiOjE3MTcxODYzMjF9.piegnLwbUyiR5fKNou0Vv7ADSbuJNDEVj_d6yBKYiyg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieId\": \"66587779126f1790cac0c999\",\r\n    \"userId\": \"665866b385ca07a3372ae5fd\",\r\n    \"rating\": 1,\r\n    \"comment\": \"Movie was pooo four.\",\r\n    \"createdAt\": \"{{today}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all reviews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTc0OTUyLCJleHAiOjE3MTcxNzU1NTJ9.DBBLxF0BFy9ZuUs0F0mbN7kjVDsecOSBLKq3T3-9qZE"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a review",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTg1NzIxLCJleHAiOjE3MTcxODYzMjF9.piegnLwbUyiR5fKNou0Vv7ADSbuJNDEVj_d6yBKYiyg"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/reviews/6658e6c99525e63163ab763a",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"6658e6c99525e63163ab763a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTg0OTQ1LCJleHAiOjE3MTcxODU1NDV9.9_F-AW5YBbU6KDs2_bqcc8x2qvl9AFkAgsNxC24MkqM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"rating\": 2,\r\n    \"comment\": \"Movie was pooo updated.\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/reviews/6658e5bc89b8813832c6e4d9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"6658e5bc89b8813832c6e4d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MTg0OTQ1LCJleHAiOjE3MTcxODU1NDV9.9_F-AW5YBbU6KDs2_bqcc8x2qvl9AFkAgsNxC24MkqM"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/reviews/6658e6289525e63163ab7636",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"6658e6289525e63163ab7636"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "/* {\r\n    \"username\": \"Admin\",\r\n    \"password\": \"1234admin\"\r\n}  */\r\n{\r\n    \"username\": \"TEST\",\r\n    \"password\": \"1234test\"\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Admin\",\r\n    \"email\": \"admin@hotmale.com\",\r\n    \"password\": \"1234admin\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
