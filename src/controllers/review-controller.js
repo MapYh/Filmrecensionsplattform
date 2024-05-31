@@ -60,4 +60,38 @@ async function getAllReviews(req, res) {
   }
 }
 
-module.exports = { addAReviewToAMovie, getAllReviews };
+async function getAllReviewForAMovie(req, res) {
+  const allReviewsForAMovie = await reviews.find({ movieId: req.params.id });
+  console.log(allReviewsForAMovie.length);
+  if (!allReviewsForAMovie) {
+    return res.status(400).json({
+      error: `Could not get the review`,
+    });
+  }
+  if (allReviewsForAMovie.length == 0) {
+    return res.status(200).json({
+      status: "success",
+      Message: `The movie has no reviews.`,
+    });
+  }
+
+  try {
+    if (allReviewsForAMovie) {
+      res.status(200).json({
+        status: "success",
+        message: allReviewsForAMovie,
+      });
+    } else {
+      res.status(401).send(`could not get the reviews`);
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error getting reviews." });
+  }
+}
+
+module.exports = {
+  addAReviewToAMovie,
+  getAllReviews,
+  getAllReviewForAMovie,
+  getAReview,
+};
