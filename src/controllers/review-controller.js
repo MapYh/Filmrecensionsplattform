@@ -116,9 +116,37 @@ async function getAReview(req, res) {
   }
 }
 
+async function updateAReview(req, res) {
+  const { rating, comment } = req.body;
+  const review = await reviews.findById(req.params.id).exec();
+  if (!review) {
+    return res.status(400).json({
+      error: `Could not get the review`,
+    });
+  }
+
+  try {
+    const result = await reviews.findByIdAndUpdate(req.params.id, {
+      rating: rating,
+      comment: comment,
+    });
+    if (result) {
+      res.status(200).json({
+        status: "success",
+        message: "Review was updated!",
+      });
+    } else {
+      res.status(401).send(`could not update the review`);
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error updating the review." });
+  }
+}
+
 module.exports = {
   addAReviewToAMovie,
   getAllReviews,
   getAllReviewForAMovie,
   getAReview,
+  updateAReview,
 };
