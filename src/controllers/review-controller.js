@@ -89,6 +89,33 @@ async function getAllReviewForAMovie(req, res) {
   }
 }
 
+async function getAReview(req, res) {
+  const review = await reviews
+    .findById(req.params.id)
+    .populate("userId")
+    .populate("movieId")
+    .exec();
+
+  if (!review) {
+    return res.status(400).json({
+      error: `Could not get the review`,
+    });
+  }
+
+  try {
+    if (review) {
+      res.status(200).json({
+        status: "success",
+        message: review,
+      });
+    } else {
+      res.status(401).send(`could not get the review`);
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error getting reviews." });
+  }
+}
+
 module.exports = {
   addAReviewToAMovie,
   getAllReviews,
