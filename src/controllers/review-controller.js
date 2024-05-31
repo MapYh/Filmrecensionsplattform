@@ -143,10 +143,33 @@ async function updateAReview(req, res) {
   }
 }
 
+async function deleteAReview(req, res) {
+  const result = await reviews.findByIdAndDelete(req.params.id).exec();
+  if (!result) {
+    return res.status(400).json({
+      error: `Could not delete the review.`,
+    });
+  }
+
+  try {
+    if (result) {
+      res.status(200).json({
+        status: "success",
+        message: "Review was deleted successfully.",
+      });
+    } else {
+      res.status(401).send(`could not delete the review`);
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting the review." });
+  }
+}
+
 module.exports = {
   addAReviewToAMovie,
   getAllReviews,
   getAllReviewForAMovie,
   getAReview,
   updateAReview,
+  deleteAReview,
 };
