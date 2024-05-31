@@ -32,8 +32,6 @@ async function signup(req, res) {
 
 async function login(req, res) {
   const { username, password, role } = req.body;
-  console.log(username);
-  console.log(password);
 
   if (!username || !password) {
     return res
@@ -47,7 +45,6 @@ async function login(req, res) {
     if (user == null) {
       return res.status(404).send("User not found");
     }
-    console.log(user);
 
     const validPassword = comparePasswords(password, user.password);
 

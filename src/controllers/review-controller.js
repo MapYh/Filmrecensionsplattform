@@ -29,7 +29,6 @@ async function addAReviewToAMovie(req, res) {
       res.status(200).json({
         status: "success",
         message: "Review posted!",
-        movie: result,
       });
     } else {
       res.status(401).send("Review not posted.");
@@ -39,4 +38,26 @@ async function addAReviewToAMovie(req, res) {
   }
 }
 
-module.exports = { addAReviewToAMovie };
+async function getAllReviews(req, res) {
+  const allReviews = await reviews.find();
+  if (!allReviews) {
+    return res.status(400).json({
+      error: `could not get the reviews`,
+    });
+  }
+
+  try {
+    if (allReviews) {
+      res.status(200).json({
+        status: "success",
+        message: allReviews,
+      });
+    } else {
+      res.status(401).send(`could not get the reviews`);
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error getting reviews." });
+  }
+}
+
+module.exports = { addAReviewToAMovie, getAllReviews };
