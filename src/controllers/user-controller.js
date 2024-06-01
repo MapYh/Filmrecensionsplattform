@@ -76,7 +76,7 @@ async function login(req, res) {
         token,
       });
     } else {
-      res.status(401).send("Wrong password or wrong role");
+      res.status(401).send("Wrong password.");
     }
   } catch (error) {
     console.error("Error checking password", error);
