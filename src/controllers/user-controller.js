@@ -18,6 +18,10 @@ async function signup(req, res) {
     if (existingUser != null) {
       return res.status(418).json({ error: "Username already exists" });
     }
+    const existingEmail = await getAUserByEmail(email);
+    if (existingEmail != null) {
+      return res.status(418).json({ error: "Email is already registerd" });
+    }
 
     await createAccount(username, password, email, role);
     res.status(200).json({
@@ -86,6 +90,17 @@ async function login(req, res) {
 
 async function getAUser(username) {
   const result = await Users.findOne({ username: username });
+  if (result) {
+    return result;
+  } else {
+    return;
+  }
+}
+
+async function getAUserByEmail(email) {
+  const lowerCaseEmail = email.toLowerCase();
+  console.log(lowerCaseEmail);
+  const result = await Users.findOne({ email: lowerCaseEmail });
   if (result) {
     return result;
   } else {
