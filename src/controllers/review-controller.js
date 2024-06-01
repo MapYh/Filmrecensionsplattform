@@ -4,7 +4,12 @@ const users = require("../models/user-model");
 
 async function addAReviewToAMovie(req, res) {
   const { movieId, userId, rating, comment, createdAt } = req.body;
-
+  if (!movieId || !userId || !rating || !comment || !createdAt) {
+    return res.status(400).json({
+      error:
+        "MovieId, userId, rating, comment or creation date are missing or incorrect",
+    });
+  }
   const movieToReview = await movies.findById(movieId);
   if (!movieToReview) {
     return res.status(400).json({
@@ -118,6 +123,11 @@ async function getAReview(req, res) {
 
 async function updateAReview(req, res) {
   const { rating, comment } = req.body;
+  if (!rating || !comment) {
+    return res.status(400).json({
+      error: "Rating or comment date are missing or incorrect",
+    });
+  }
   const review = await reviews.findById(req.params.id).exec();
   if (!review) {
     return res.status(400).json({

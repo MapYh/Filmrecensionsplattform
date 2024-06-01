@@ -10,7 +10,11 @@ async function addAMovieToDb(req, res) {
   }
 
   const { title, director, releaseYear, genre } = req.body;
-
+  if (!title || !director || !releaseYear || !genre) {
+    return res.status(400).json({
+      error: "Title, director, release year or genre are missing or incorrect",
+    });
+  }
   const duplicate = await Movie.findOne({ title: title });
   if (duplicate) {
     return res
@@ -70,6 +74,13 @@ async function getMovieById(req, res) {
 
 async function updateAMovieById(req, res) {
   const { title, genre, releaseYear, director } = req.body;
+
+  if (!title || !director || !releaseYear || !genre) {
+    return res.status(400).json({
+      error: "Title, director, release year or genre are missing or incorrect",
+    });
+  }
+
   try {
     const result = await Movie.findByIdAndUpdate(req.params.id, {
       title: title,
