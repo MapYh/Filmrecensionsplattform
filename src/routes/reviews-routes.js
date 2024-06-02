@@ -2,7 +2,7 @@ const { Router } = require("express");
 const {
   addAReviewToAMovie,
   getAllReviews,
-  getAllReviewForAMovie,
+  getAllReviewsForAMovie,
   getAReview,
   updateAReview,
   deleteAReview,
@@ -14,7 +14,7 @@ router.post("/reviews", userAuth, addAReviewToAMovie);
 
 router.get("/reviews", userAuth, getAllReviews);
 router.get("/reviews/:id", userAuth, getAReview);
-router.get("/movies/:id/reviews", userAuth, getAllReviewForAMovie);
+router.get("/movies/:id/reviews", userAuth, getAllReviewsForAMovie);
 
 router.put("/reviews/:id", userAuth, updateAReview); //Fix so that other users cant edit other peoples reviews.
 router.delete("/reviews/:id", userAuth, deleteAReview);

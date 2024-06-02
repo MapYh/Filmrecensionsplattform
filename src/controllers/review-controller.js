@@ -74,7 +74,7 @@ async function getAllReviews(req, res) {
   }
 }
 
-async function getAllReviewForAMovie(req, res) {
+async function getAllReviewsForAMovie(req, res) {
   const allReviewsForAMovie = await reviews.find({ movieId: req.params.id });
   console.log(allReviewsForAMovie.length);
   if (!allReviewsForAMovie) {
@@ -232,7 +232,7 @@ async function deleteAReview(req, res) {
 module.exports = {
   addAReviewToAMovie,
   getAllReviews,
-  getAllReviewForAMovie,
+  getAllReviewsForAMovie,
   getAReview,
   updateAReview,
   deleteAReview,

@@ -1,4 +1,5 @@
 const Movie = require("../models/movie-model");
+const Reviews = require("../models/review-model");
 
 async function addAMovieToDb(req, res) {
   const updates = Object.keys(req.body);
@@ -44,17 +45,22 @@ async function getAllMoviesInDb(req, res) {
     const result = await Movie.find();
     if (result) {
       console.log(result);
-      res.status(201).json({ success: true, Message: result });
+      res.status(201).json({
+        success: true,
+        Message: result,
+      });
     } else {
-      res
-        .status(500)
-        .json({ success: false, Message: "Could not find movies." });
+      res.status(500).json({
+        Status: "success",
+
+        Message: "Could not find movies.",
+      });
     }
   } catch (error) {
-    res.status(500).json({ Message: "Internal server error." });
+    res.status(500).json({ success: true, Message: "Internal server error." });
   }
 }
-
+//Fix runs when getAverageRatings() function is supposed to run.
 async function getMovieById(req, res) {
   try {
     const result = await Movie.findById(req.params.id);
@@ -68,9 +74,9 @@ async function getMovieById(req, res) {
       });
     }
   } catch (error) {
-    res.status(500).json({ Message: "Internal server error." });
+    res.status(500).json({ success: false, Message: "Internal server error." });
   }
-}
+} //Fix
 
 async function updateAMovieById(req, res) {
   const { title, genre, releaseYear, director } = req.body;
@@ -118,7 +124,59 @@ async function deleteAMovieById(req, res) {
       });
     }
   } catch (error) {
-    res.status(500).json({ Message: "Internal server error." });
+    res.status(500).json({ success: false, Message: "Internal server error." });
+  }
+}
+
+async function getAverageRatings(req, res) {
+  try {
+    const result = await Movie.aggregate([
+      {
+        $lookup: {
+          from: "reviews",
+          localField: "_id",
+          foreignField: "movieId",
+          as: "Details",
+        },
+      },
+      {
+        $unwind: "$Details",
+      },
+
+      {
+        $group: {
+          _id: "$title",
+          Average_rating: {
+            $avg: "$Details.rating",
+          },
+        },
+      },
+    ]);
+
+    if (!result) {
+      res.status(401).json({
+        success: false,
+        Message: `Could not get average review score.`,
+      });
+    }
+
+    if (result) {
+      console.log(result);
+      res.status(201).json({
+        success: true,
+        Message: result,
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        Message: `Could not get average review score.`,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      Message: `Internal server error: ${error}`,
+    });
   }
 }
 
@@ -128,4 +186,5 @@ module.exports = {
   getMovieById,
   updateAMovieById,
   deleteAMovieById,
+  getAverageRatings,
 };
