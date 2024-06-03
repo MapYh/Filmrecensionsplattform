@@ -8,7 +8,8 @@ async function signup(req, res) {
 
   if (!username || !password || !email || !role) {
     return res.status(400).json({
-      error: "Username, email, role or password are missing or incorrect",
+      Succcess: false,
+      Error: "Username, email, role or password are missing or incorrect",
     });
   }
 
@@ -16,21 +17,27 @@ async function signup(req, res) {
     const existingUser = await getAUser(username);
 
     if (existingUser != null) {
-      return res.status(418).json({ error: "Username already exists" });
+      return res
+        .status(418)
+        .json({ Succcess: false, Error: "Username already exists" });
     }
     const existingEmail = await getAUserByEmail(email);
     if (existingEmail != null) {
-      return res.status(418).json({ error: "Email is already registerd" });
+      return res
+        .status(418)
+        .json({ Succcess: false, Error: "Email is already registerd" });
     }
 
     await createAccount(username, password, email, role);
     res.status(200).json({
-      status: "success",
+      Succcess: true,
       message: "Account created successfully",
     });
   } catch (error) {
     console.error("Error creating account", error);
-    res.status(500).json({ message: "Error creating account" });
+    res
+      .status(500)
+      .json({ Succcess: false, Message: "Error creating account" });
   }
 }
 
@@ -38,16 +45,19 @@ async function login(req, res) {
   const { username, password, role } = req.body;
 
   if (!username || !password) {
-    return res
-      .status(400)
-      .json({ error: "Username and password are missing or incorrect" });
+    return res.status(400).json({
+      Succcess: false,
+      Error: "Username and password are missing or incorrect",
+    });
   }
 
   try {
     const user = await getAUser(username);
 
     if (user == null) {
-      return res.status(404).send("User not found");
+      return res
+        .status(404)
+        .json({ Succcess: false, Message: "User not found" });
     }
 
     const validPassword = comparePasswords(password, user.password);
@@ -62,7 +72,7 @@ async function login(req, res) {
       );
 
       res.status(200).json({
-        status: "success",
+        Succcess: true,
         message: "Admin login successful",
         token,
       });
@@ -75,16 +85,16 @@ async function login(req, res) {
         }
       );
       res.status(200).json({
-        status: "success",
-        message: "User login successful",
+        Succcess: true,
+        Message: "User login successful",
         token,
       });
     } else {
-      res.status(401).send("Wrong password.");
+      res.status(401).json({ Succcess: false, Message: "Wrong password." });
     }
   } catch (error) {
     console.error("Error checking password", error);
-    res.status(500).send("Internal server error");
+    res.status(500).json({ Succcess: false, Message: "Internal server error" });
   }
 }
 

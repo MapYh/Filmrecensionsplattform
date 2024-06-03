@@ -7,6 +7,9 @@ const Review = new Schema({
   rating: {
     type: Number,
     required: true,
+    min: 0,
+    max: 10,
+    default: 0,
   },
   comment: {
     type: String,

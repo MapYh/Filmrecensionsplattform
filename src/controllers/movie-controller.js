@@ -6,21 +6,25 @@ async function addAMovieToDb(req, res) {
   const allowedUpdates = ["title", "director", "releaseYear", "genre"];
   const isValid = updates.every((update) => allowedUpdates.includes(update));
   if (!isValid) {
-    res.status(400).json({ message: "Invalid request fields" });
+    res
+      .status(400)
+      .json({ Succcess: false, message: "Invalid request fields" });
     return;
   }
 
   const { title, director, releaseYear, genre } = req.body;
   if (!title || !director || !releaseYear || !genre) {
     return res.status(400).json({
-      error: "Title, director, release year or genre are missing or incorrect",
+      Succcess: false,
+      Error: "Title, director, release year or genre are missing or incorrect",
     });
   }
   const duplicate = await Movie.findOne({ title: title });
   if (duplicate) {
-    return res
-      .status(409)
-      .json({ Message: "A movie with that title already exists." });
+    return res.status(409).json({
+      Succcess: false,
+      Message: "A movie with that title already exists.",
+    });
   }
   try {
     const result = await Movie.create({
@@ -31,12 +35,14 @@ async function addAMovieToDb(req, res) {
     });
     if (result) {
       console.log(result);
-      res.status(201).json({ success: true, Message: "New movie added." });
+      res.status(201).json({ Success: true, Message: "New movie added." });
     } else {
-      res.status(500).json({ success: false, Message: "No new movie added." });
+      res.status(500).json({ Success: false, Message: "No new movie added." });
     }
   } catch (error) {
-    res.status(500).json({ Message: "Internal server error." });
+    res
+      .status(500)
+      .json({ Succcess: false, Message: "Internal server error." });
   }
 }
 
@@ -46,18 +52,18 @@ async function getAllMoviesInDb(req, res) {
     if (result) {
       console.log(result);
       res.status(201).json({
-        success: true,
+        Success: true,
         Message: result,
       });
     } else {
       res.status(500).json({
-        Status: "success",
+        Succcess: false,
 
         Message: "Could not find movies.",
       });
     }
   } catch (error) {
-    res.status(500).json({ success: true, Message: "Internal server error." });
+    res.status(500).json({ Success: true, Message: "Internal server error." });
   }
 }
 //Fix runs when getAverageRatings() function is supposed to run.
@@ -66,7 +72,7 @@ async function getMovieById(req, res) {
     const result = await Movie.findById(req.params.id);
     if (result) {
       console.log(result);
-      res.status(201).json({ success: true, Message: result });
+      res.status(201).json({ Success: true, Message: result });
     } else {
       res.status(500).json({
         success: false,
@@ -74,7 +80,7 @@ async function getMovieById(req, res) {
       });
     }
   } catch (error) {
-    res.status(500).json({ success: false, Message: "Internal server error." });
+    res.status(500).json({ Success: false, Message: "Internal server error." });
   }
 } //Fix
 
@@ -83,7 +89,8 @@ async function updateAMovieById(req, res) {
 
   if (!title || !director || !releaseYear || !genre) {
     return res.status(400).json({
-      error: "Title, director, release year or genre are missing or incorrect",
+      Succcess: false,
+      Error: "Title, director, release year or genre are missing or incorrect",
     });
   }
 
@@ -96,15 +103,17 @@ async function updateAMovieById(req, res) {
     });
     if (result) {
       console.log(result);
-      res.status(201).json({ success: true, Message: result });
+      res.status(201).json({ Success: true, Message: result });
     } else {
       res.status(500).json({
-        success: false,
+        Success: false,
         Message: `Could not update movie with title: ${title}.`,
       });
     }
   } catch (error) {
-    res.status(500).json({ Message: "Internal server error." });
+    res
+      .status(500)
+      .json({ Succcess: false, Message: "Internal server error." });
   }
 }
 
@@ -114,17 +123,17 @@ async function deleteAMovieById(req, res) {
     if (result) {
       console.log(result);
       res.status(201).json({
-        success: true,
+        Success: true,
         Message: `Deleted a movie with the id: ${req.params.id}`,
       });
     } else {
       res.status(500).json({
-        success: false,
+        Success: false,
         Message: `Could not delete movie with id: ${req.params.id}.`,
       });
     }
   } catch (error) {
-    res.status(500).json({ success: false, Message: "Internal server error." });
+    res.status(500).json({ Success: false, Message: "Internal server error." });
   }
 }
 
@@ -151,11 +160,18 @@ async function getAverageRatings(req, res) {
           },
         },
       },
+      {
+        $addFields: {
+          Average_rating: {
+            $round: ["$Average_rating", 1],
+          },
+        },
+      },
     ]);
 
     if (!result) {
       res.status(401).json({
-        success: false,
+        Success: false,
         Message: `Could not get average review score.`,
       });
     }
@@ -163,18 +179,18 @@ async function getAverageRatings(req, res) {
     if (result) {
       console.log(result);
       res.status(201).json({
-        success: true,
+        Success: true,
         Message: result,
       });
     } else {
       res.status(500).json({
-        success: false,
+        Success: false,
         Message: `Could not get average review score.`,
       });
     }
   } catch (error) {
     res.status(500).json({
-      success: false,
+      Success: false,
       Message: `Internal server error: ${error}`,
     });
   }
