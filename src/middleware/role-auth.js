@@ -20,7 +20,9 @@ const adminAuth = (req, res, next) => {
     if (req.user.role == "admin") {
       next();
     } else {
-      res.status(401).json({ Error_message: "Invalid role for request." });
+      res.status(401).json({
+        Error_message: "Only admins can add, update or delete movies.",
+      });
     }
   } catch (error) {
     console.error("Invalid token:", error);

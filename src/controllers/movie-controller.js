@@ -66,15 +66,22 @@ async function getAllMoviesInDb(req, res) {
     res.status(500).json({ Success: true, Message: "Internal server error." });
   }
 }
-//Fix runs when getAverageRatings() function is supposed to run.
+
 async function getMovieById(req, res) {
+  const result = await Movie.findById(req.params.id);
+  if (!result) {
+    res.status(400).json({
+      success: false,
+      Message: `Could not find movie with id: ${req.params.id}.`,
+    });
+    return;
+  }
   try {
-    const result = await Movie.findById(req.params.id);
     if (result) {
       console.log(result);
       res.status(201).json({ Success: true, Message: result });
     } else {
-      res.status(500).json({
+      res.status(400).json({
         success: false,
         Message: `Could not find movie with id: ${id}.`,
       });
@@ -82,7 +89,7 @@ async function getMovieById(req, res) {
   } catch (error) {
     res.status(500).json({ Success: false, Message: "Internal server error." });
   }
-} //Fix
+}
 
 async function updateAMovieById(req, res) {
   const { title, genre, releaseYear, director } = req.body;
