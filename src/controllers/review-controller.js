@@ -151,7 +151,7 @@ async function updateAReview(req, res) {
   );
   req.user = decoded;
   const reviewUserId = await reviews.findById(req.params.id);
-  console.log(reviewUserId.userId);
+
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     if (!rating || !comment) {
       return res.status(400).json({

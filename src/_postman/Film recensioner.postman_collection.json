@@ -13,12 +13,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcyNzA0OTYsImV4cCI6MTcxNzI3MTA5Nn0.m_uZU3ppFNgWg5nyBZ7I1DjAWzwUpYch9y-6jPs47Wc"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"test-movie-three-\",\r\n    \"director\": \"test\",\r\n    \"releaseYear\": 2022,\r\n    \"genre\": \"Action\"\r\n}",
+					"raw": "{\r\n    \"title\":\"Gudfadern del 2\",\r\n    \"director\": \"Francis Ford Coppola\",\r\n    \"releaseYear\": 1974,\r\n    \"genre\": \"Drama/Crime\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,7 +49,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcyNzA0OTYsImV4cCI6MTcxNzI3MTA5Nn0.m_uZU3ppFNgWg5nyBZ7I1DjAWzwUpYch9y-6jPs47Wc"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
 					}
 				],
 				"url": {
@@ -76,11 +76,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3MjY4OTgzLCJleHAiOjE3MTcyNjk1ODN9.LqVniPMgwnJQRbnxASVnFaF3maVo8EfAa5mETlET4Ec"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/6658781613c9a2c552503c8b",
+					"raw": "http://127.0.0.1:8000/movies/665de3b19bcf8ba7ce145cc0",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -91,7 +91,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"6658781613c9a2c552503c8b"
+						"665de3b19bcf8ba7ce145cc0"
 					]
 				}
 			},
@@ -104,7 +104,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcyNzA0OTYsImV4cCI6MTcxNzI3MTA5Nn0.m_uZU3ppFNgWg5nyBZ7I1DjAWzwUpYch9y-6jPs47Wc"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
 					}
 				],
 				"body": {
@@ -117,7 +117,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/66587779126f1790cac0c999",
+					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -128,7 +128,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"66587779126f1790cac0c999"
+						"665de3e99bcf8ba7ce145ccb"
 					]
 				}
 			},
@@ -144,7 +144,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcyNzA0OTYsImV4cCI6MTcxNzI3MTA5Nn0.m_uZU3ppFNgWg5nyBZ7I1DjAWzwUpYch9y-6jPs47Wc"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMzU5LCJleHAiOjE3MTc0MzI5NTl9.LKd4t-TJzB-fZBQVw_D0pmOuPCkFf0ZTnoeU7jcsHFY"
 					}
 				],
 				"body": {
@@ -157,7 +157,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/66587779126f1790cac0c999/reviews",
+					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb/reviews",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -168,7 +168,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"66587779126f1790cac0c999",
+						"665de3e99bcf8ba7ce145ccb",
 						"reviews"
 					]
 				}
@@ -182,11 +182,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg3MTk0YWNmNmY3ZTI3MzcxY2I0NiIsInVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTcyNzA0OTYsImV4cCI6MTcxNzI3MTA5Nn0.m_uZU3ppFNgWg5nyBZ7I1DjAWzwUpYch9y-6jPs47Wc"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWUxZjliZWZmNWQwNWIzMWUzZmVjNiIsInVzZXJuYW1lIjoiYXJub2xkIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc0NDUyOTYsImV4cCI6MTcxNzQ0NTg5Nn0.HHaYRzMNlzG9zEYK6Ad-uaPqyVnpcA_4p9-1xmSMfp8"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/66587779126f1790cac0c999",
+					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -197,7 +197,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"66587779126f1790cac0c999"
+						"665de3e99bcf8ba7ce145ccb"
 					]
 				}
 			},
@@ -226,12 +226,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWI5MDE1OTgwNDBiMjgwZjFiZjA2MyIsInVzZXJuYW1lIjoiQW1pbmQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI4MTIyMywiZXhwIjoxNzE3MjgxODIzfQ.ja6GXo9MH_TXjrVwg2X-jqpMNq6ZCR7JSSXcUB9CPp0"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDM4NzY4LCJleHAiOjE3MTc0MzkzNjh9.pixvazBm5gjx5ZErhKKiGQNK62ncdw1K_gmksyALPp4"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"movieId\": \"6658781613c9a2c552503c8b\",\r\n    \"userId\": \"665b901598040b280f1bf063\",\r\n    \"rating\": 5,\r\n    \"comment\": \"Movie was poooPPP gas\",\r\n    \"createdAt\": \"{{today}}\"\r\n}",
+					"raw": "{\r\n    \"movieId\": \"665de3b19bcf8ba7ce145cc8\",\r\n    \"userId\": \"665df4fb85f090e2f6e7b020\",\r\n    \"rating\": 5,\r\n    \"comment\": \"Movie was good\",\r\n    \"createdAt\": \"{{today}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -262,7 +262,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3Mjc0ODk0LCJleHAiOjE3MTcyNzU0OTR9.If9eEmMeOb6vM6_MuhTTHZpIRWaPW28tzAk0g1C9AEM"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDM2MzQwLCJleHAiOjE3MTc0MzY5NDB9.MjpiF9S_k5yCNXXkR94ks0Ek-3eTqlUBYLOh2mxwtWE"
 					}
 				],
 				"url": {
@@ -289,11 +289,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTg2NmIzODVjYTA3YTMzNzJhZTVmZCIsInVzZXJuYW1lIjoiVEVTVCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3Mjc0ODk0LCJleHAiOjE3MTcyNzU0OTR9.If9eEmMeOb6vM6_MuhTTHZpIRWaPW28tzAk0g1C9AEM"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/reviews/665a2d0de7def7f2331c642f",
+					"raw": "http://127.0.0.1:8000/reviews/665dff3f8bf46633803789b2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -304,7 +304,7 @@
 					"port": "8000",
 					"path": [
 						"reviews",
-						"665a2d0de7def7f2331c642f"
+						"665dff3f8bf46633803789b2"
 					]
 				}
 			},
@@ -317,12 +317,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWI5MDE1OTgwNDBiMjgwZjFiZjA2MyIsInVzZXJuYW1lIjoiQW1pbmQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI3NjczNCwiZXhwIjoxNzE3Mjc3MzM0fQ.9icnAv3YXOm2z3f1oqSrmmo99kejUZP_Blb-iQFMOoY"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyOTIxLCJleHAiOjE3MTc0MzM1MjF9.lPARj0RA_sBRXXbuJVi2EvK2VbnG5HkY1EavyPdx1T4"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n    \"rating\": 546,\r\n    \"comment\": \"Movie was sdgfds.\"\r\n    \r\n}",
+					"raw": "{\r\n    \r\n    \"rating\": 546,\r\n    \"comment\": \"Movie was great.\"\r\n    \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -330,7 +330,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/reviews/665b90a398040b280f1bf06e",
+					"raw": "http://127.0.0.1:8000/reviews/665df0749bcf8ba7ce145d12",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -341,7 +341,7 @@
 					"port": "8000",
 					"path": [
 						"reviews",
-						"665b90a398040b280f1bf06e"
+						"665df0749bcf8ba7ce145d12"
 					]
 				}
 			},
@@ -354,11 +354,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWI5MDE1OTgwNDBiMjgwZjFiZjA2MyIsInVzZXJuYW1lIjoiQW1pbmQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzI3NjczNCwiZXhwIjoxNzE3Mjc3MzM0fQ.9icnAv3YXOm2z3f1oqSrmmo99kejUZP_Blb-iQFMOoY"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzMxOWJjZjhiYTdjZTE0NWNjMCIsInVzZXJuYW1lIjoiQsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDMzMjY1LCJleHAiOjE3MTc0MzM4NjV9.CP_uXLtLapn6z3da9GGT-UDEEWALPwBooAPqEAL_9As"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/reviews/665a2d18e7def7f2331c6437",
+					"raw": "http://127.0.0.1:8000/reviews/665df2d79bcf8ba7ce145d21",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -369,7 +369,7 @@
 					"port": "8000",
 					"path": [
 						"reviews",
-						"665a2d18e7def7f2331c6437"
+						"665df2d79bcf8ba7ce145d21"
 					]
 				}
 			},
@@ -388,7 +388,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Amind\",\r\n    \"password\": \"1234admin\"\r\n}   \r\n\r\n/* {\r\n    \"username\": \"TEST\",\r\n    \"password\": \"1234test\"\r\n}     */",
+					"raw": "/* {\r\n    \"username\": \"Börje\",\r\n    \"password\": \"1234admin\"\r\n}     */\r\n\r\n{\r\n    \"username\": \"arnold\",\r\n    \"password\": \"1234admin\"\r\n}    ",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -419,7 +419,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Aminhgjdss\",\r\n    \"email\": \"admAys@hotmale.com\",\r\n    \"password\": \"1234admin\",\r\n    \"role\": \"user\"\r\n}",
+					"raw": "{\r\n    \"username\": \"arnold\",\r\n    \"email\": \"arnold@hotmale.com\",\r\n    \"password\": \"1234admin\",\r\n    \"role\": \"user\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -450,7 +450,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWI5MDE1OTgwNDBiMjgwZjFiZjA2MyIsInVzZXJuYW1lIjoiQW1pbmQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNzM2ODYxNiwiZXhwIjoxNzE3MzY5MjE2fQ.Hch4LPcAcEwxHf7Ctt4np4grNLclRSpTAcBzuZGJaIk"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
 					}
 				],
 				"url": {
