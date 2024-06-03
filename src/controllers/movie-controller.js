@@ -101,14 +101,14 @@ async function updateAMovieById(req, res) {
       Error: "Title, director, release year or genre are missing or incorrect",
     });
   }
-  const result = await Movie.findByIdAndUpdate(req.params.id, {
-    title: title,
-    director: director,
-    releaseYear: releaseYear,
-    genre: genre,
-  });
 
   try {
+    const result = await Movie.findByIdAndUpdate(req.params.id, {
+      title: title,
+      director: director,
+      releaseYear: releaseYear,
+      genre: genre,
+    });
     if (!result) {
       res.status(400).json({
         Success: false,

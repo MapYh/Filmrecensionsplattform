@@ -215,12 +215,6 @@ async function deleteAReview(req, res) {
     process.env.JWT_SECRET
   );
   req.user = decoded;
-  const reviewUserId = await reviews.findById(req.params.id);
-  if (!reviewUserId) {
-    return res
-      .status(400)
-      .json({ Succcess: false, Error: `Could not get the review` });
-  }
 
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     const result = await reviews.findByIdAndDelete(req.params.id).exec();
