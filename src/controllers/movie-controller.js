@@ -69,6 +69,7 @@ async function getAllMoviesInDb(req, res) {
 
 async function getMovieById(req, res) {
   const result = await Movie.findById(req.params.id);
+  console.log(result);
   if (!result) {
     res.status(400).json({
       success: false,
@@ -100,21 +101,27 @@ async function updateAMovieById(req, res) {
       Error: "Title, director, release year or genre are missing or incorrect",
     });
   }
+  const result = await Movie.findByIdAndUpdate(req.params.id, {
+    title: title,
+    director: director,
+    releaseYear: releaseYear,
+    genre: genre,
+  });
 
   try {
-    const result = await Movie.findByIdAndUpdate(req.params.id, {
-      title: title,
-      director: director,
-      releaseYear: releaseYear,
-      genre: genre,
-    });
+    if (!result) {
+      res.status(400).json({
+        Success: false,
+        Message: `Could not update movie with id: ${req.params.id}. Possibly wrong id number.`,
+      });
+      return;
+    }
     if (result) {
-      console.log(result);
-      res.status(201).json({ Success: true, Message: result });
+      res.status(201).json({ Success: true, Message: "Movie was updated." });
     } else {
       res.status(500).json({
         Success: false,
-        Message: `Could not update movie with title: ${title}.`,
+        Message: `Could not update movie with id: ${req.params.id}.`,
       });
     }
   } catch (error) {

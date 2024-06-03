@@ -112,19 +112,19 @@ async function getAllReviewsForAMovie(req, res) {
 }
 
 async function getAReview(req, res) {
-  const review = await reviews
-    .findById(req.params.id)
-    .populate("userId", "username")
-    .populate("movieId", "title genre releaseYear director")
-    .exec();
-
-  if (!review) {
-    return res
-      .status(400)
-      .json({ Succcess: false, Error: `Could not get the review` });
-  }
-
   try {
+    const review = await reviews
+      .findById(req.params.id)
+      .populate("userId", "username")
+      .populate("movieId", "title genre releaseYear director")
+      .exec();
+
+    if (!review) {
+      return res
+        .status(400)
+        .json({ Succcess: false, Error: `Could not get the review` });
+    }
+
     if (review) {
       res.status(200).json({
         Succcess: true,
@@ -136,9 +136,10 @@ async function getAReview(req, res) {
         .json({ Succcess: false, Message: `could not get the review` });
     }
   } catch (error) {
-    res
-      .status(500)
-      .json({ Succcess: false, Message: "Error getting reviews." });
+    res.status(500).json({
+      Succcess: false,
+      Message: "Error getting reviews. Possibly the id is wrong.",
+    });
   }
 }
 
@@ -150,7 +151,20 @@ async function updateAReview(req, res) {
     process.env.JWT_SECRET
   );
   req.user = decoded;
-  const reviewUserId = await reviews.findById(req.params.id);
+
+  try {
+    const reviewUserId = await reviews.findById(req.params.id);
+    if (!reviewUserId) {
+      return res
+        .status(400)
+        .json({ Succcess: false, Error: `Could not get the review` });
+    }
+  } catch (error) {
+    res.status(401).json({
+      Succcess: false,
+      Message: "You can only update your own reviews.",
+    });
+  }
 
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     if (!rating || !comment) {
@@ -202,7 +216,12 @@ async function deleteAReview(req, res) {
   );
   req.user = decoded;
   const reviewUserId = await reviews.findById(req.params.id);
-  console.log(reviewUserId.userId);
+  if (!reviewUserId) {
+    return res
+      .status(400)
+      .json({ Succcess: false, Error: `Could not get the review` });
+  }
+
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     const result = await reviews.findByIdAndDelete(req.params.id).exec();
     if (!result) {
