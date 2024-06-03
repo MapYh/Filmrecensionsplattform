@@ -49,7 +49,11 @@ async function addAReviewToAMovie(req, res) {
 }
 
 async function getAllReviews(req, res) {
-  const allReviews = await reviews.find();
+  const allReviews = await reviews
+    .find()
+    .populate("userId", "username")
+    .populate("movieId", "title genre releaseYear director")
+    .exec();
   if (!allReviews) {
     return res
       .status(400)
@@ -110,8 +114,8 @@ async function getAllReviewsForAMovie(req, res) {
 async function getAReview(req, res) {
   const review = await reviews
     .findById(req.params.id)
-    .populate("userId")
-    .populate("movieId")
+    .populate("userId", "username")
+    .populate("movieId", "title genre releaseYear director")
     .exec();
 
   if (!review) {

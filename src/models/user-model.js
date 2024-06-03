@@ -5,6 +5,7 @@ const Users = require("../models/user-model");
 const User = new Schema({
   username: {
     type: String,
+    lowercase: true,
     required: true,
   },
   email: {
