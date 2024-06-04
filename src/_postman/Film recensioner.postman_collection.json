@@ -13,12 +13,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTE0MDczLCJleHAiOjE3MTc1MTQ2NzN9.JjAJq7QVQfKm2YyyCSVApftJeH47k1PZivMKtFOpra0"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"Gudfadern del 2\",\r\n    \"director\": \"Francis Ford Coppola\",\r\n    \"releaseYear\": 1974,\r\n    \"genre\": \"Drama/Crime\"\r\n}",
+					"raw": "{\r\n    \"title\": \"gudfadern del 1\",\r\n    \"director\": \"test\",\r\n    \"releaseYear\": 2022,\r\n    \"genre\": \"Drama\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,7 +49,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTAzNjM0LCJleHAiOjE3MTc1MDQyMzR9.ttp98vzO7RVdZxt2WobIhOIxMn78wbVXtdHHWCT-8yg"
 					}
 				],
 				"url": {
@@ -76,11 +76,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWUxZjliZWZmNWQwNWIzMWUzZmVjNiIsInVzZXJuYW1lIjoiYXJub2xkIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc1MTI5NTgsImV4cCI6MTcxNzUxMzU1OH0.g_qiKdauY4_te50fvpwqU-A7x2O35KzYtkuv-kbGOKA"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/665de3b19bcf8ba7ce145cc0",
+					"raw": "http://127.0.0.1:8000/movies/665de4139bcf8ba7ce145cce",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -91,7 +91,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"665de3b19bcf8ba7ce145cc0"
+						"665de4139bcf8ba7ce145cce"
 					]
 				}
 			},
@@ -104,12 +104,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMDc2LCJleHAiOjE3MTc0MzI2NzZ9.Jq8WDktmYRUy2uoziFU1-RGKemTDmwfLb6ywBsIM6Q4"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTAzNjM0LCJleHAiOjE3MTc1MDQyMzR9.ttp98vzO7RVdZxt2WobIhOIxMn78wbVXtdHHWCT-8yg"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n     \"title\":\"test-movie-update-come-again-plusdlc\",\r\n    \"director\": \"test\",\r\n    \"releaseYear\": 2022,\r\n    \"genre\": \"Action\"\r\n}",
+					"raw": "{\r\n    \"title\": \"test\",\r\n    \"director\": \"dong\",\r\n    \"releaseYear\": 1,\r\n    \"genre\": \"long\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,7 +117,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb",
+					"raw": "http://127.0.0.1:8000/movies/665de4139bcf8ba7ce145cce",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -128,7 +128,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"665de3e99bcf8ba7ce145ccb"
+						"665de4139bcf8ba7ce145cce"
 					]
 				}
 			},
@@ -144,7 +144,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyMzU5LCJleHAiOjE3MTc0MzI5NTl9.LKd4t-TJzB-fZBQVw_D0pmOuPCkFf0ZTnoeU7jcsHFY"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWUxZjliZWZmNWQwNWIzMWUzZmVjNiIsInVzZXJuYW1lIjoiYXJub2xkIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc1MTI5NTgsImV4cCI6MTcxNzUxMzU1OH0.g_qiKdauY4_te50fvpwqU-A7x2O35KzYtkuv-kbGOKA"
 					}
 				],
 				"body": {
@@ -157,7 +157,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb/reviews",
+					"raw": "http://127.0.0.1:8000/movies/665de4139bcf8ba7ce145cce/reviews",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -168,7 +168,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"665de3e99bcf8ba7ce145ccb",
+						"665de4139bcf8ba7ce145cce",
 						"reviews"
 					]
 				}
@@ -182,11 +182,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWUxZjliZWZmNWQwNWIzMWUzZmVjNiIsInVzZXJuYW1lIjoiYXJub2xkIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc0NDUyOTYsImV4cCI6MTcxNzQ0NTg5Nn0.HHaYRzMNlzG9zEYK6Ad-uaPqyVnpcA_4p9-1xmSMfp8"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTAzNjM0LCJleHAiOjE3MTc1MDQyMzR9.ttp98vzO7RVdZxt2WobIhOIxMn78wbVXtdHHWCT-8yg"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/movies/665de3e99bcf8ba7ce145ccb",
+					"raw": "http://127.0.0.1:8000/movies/665f06d46f7c5ca2da846682",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -197,7 +197,7 @@
 					"port": "8000",
 					"path": [
 						"movies",
-						"665de3e99bcf8ba7ce145ccb"
+						"665f06d46f7c5ca2da846682"
 					]
 				}
 			},
@@ -226,12 +226,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDM4NzY4LCJleHAiOjE3MTc0MzkzNjh9.pixvazBm5gjx5ZErhKKiGQNK62ncdw1K_gmksyALPp4"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTE0ODg3LCJleHAiOjE3MTc1MTU0ODd9.TtvftciJj8WajxqQaWkTn3vjJQdFj1dWR2V_SFO3QOg"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"movieId\": \"665de3b19bcf8ba7ce145cc8\",\r\n    \"userId\": \"665df4fb85f090e2f6e7b020\",\r\n    \"rating\": 5,\r\n    \"comment\": \"Movie was good\",\r\n    \"createdAt\": \"{{today}}\"\r\n}",
+					"raw": "{\r\n    \"movieId\": \"665de4139bcf8ba7ce145cce\",\r\n    \"userId\": \"665df4fb85f090e2f6e7b020\",\r\n    \"rating\": 7,\r\n    \"comment\": \"The movie was meh.\",\r\n    \"createdAt\": \"2022/02/22\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -289,7 +289,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWUxZjliZWZmNWQwNWIzMWUzZmVjNiIsInVzZXJuYW1lIjoiYXJub2xkIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTc1MTI5NTgsImV4cCI6MTcxNzUxMzU1OH0.g_qiKdauY4_te50fvpwqU-A7x2O35KzYtkuv-kbGOKA"
 					}
 				],
 				"url": {
@@ -311,18 +311,18 @@
 			"response": []
 		},
 		{
-			"name": "Update a review",
+			"name": "Update a review by review id",
 			"request": {
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzBlOWJjZjhiYTdjZTE0NWNiYyIsInVzZXJuYW1lIjoiQW1pbmhnamRzcyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NDMyOTIxLCJleHAiOjE3MTc0MzM1MjF9.lPARj0RA_sBRXXbuJVi2EvK2VbnG5HkY1EavyPdx1T4"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTA1NTE5LCJleHAiOjE3MTc1MDYxMTl9.IX9X9JxCYEwcKyAqRGY8ImqoFF7rKsFmqaHXNZojFGA"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \r\n    \"rating\": 546,\r\n    \"comment\": \"Movie was great.\"\r\n    \r\n}",
+					"raw": "{\r\n    \r\n    \"rating\": 5,\r\n    \"comment\": \"jjj\"\r\n    \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -330,7 +330,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/reviews/665df0749bcf8ba7ce145d12",
+					"raw": "http://127.0.0.1:8000/reviews/665dff358bf46633803789ae",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -341,7 +341,7 @@
 					"port": "8000",
 					"path": [
 						"reviews",
-						"665df0749bcf8ba7ce145d12"
+						"665dff358bf46633803789ae"
 					]
 				}
 			},
@@ -354,11 +354,11 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRlMzMxOWJjZjhiYTdjZTE0NWNjMCIsInVzZXJuYW1lIjoiQsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDMzMjY1LCJleHAiOjE3MTc0MzM4NjV9.CP_uXLtLapn6z3da9GGT-UDEEWALPwBooAPqEAL_9As"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTA1NTE5LCJleHAiOjE3MTc1MDYxMTl9.IX9X9JxCYEwcKyAqRGY8ImqoFF7rKsFmqaHXNZojFGA"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/reviews/665df2d79bcf8ba7ce145d21",
+					"raw": "http://127.0.0.1:8000/reviews/665dff358bf46633803789ae",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -369,7 +369,7 @@
 					"port": "8000",
 					"path": [
 						"reviews",
-						"665df2d79bcf8ba7ce145d21"
+						"665dff358bf46633803789ae"
 					]
 				}
 			},
@@ -388,7 +388,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "/* {\r\n    \"username\": \"Börje\",\r\n    \"password\": \"1234admin\"\r\n}     */\r\n\r\n{\r\n    \"username\": \"arnold\",\r\n    \"password\": \"1234admin\"\r\n}    ",
+					"raw": "{\r\n    \"username\": \"Börje\",\r\n    \"password\": \"1234admin\"\r\n}    \r\n\r\n/* {\r\n    \"username\": \"arnold\",\r\n    \"password\": \"1234admin\"\r\n}     */",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -450,7 +450,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDQzODc0LCJleHAiOjE3MTc0NDQ0NzR9.PFwxg0CRadMJSV81OVZIaN2MW9wMtpS4P6UjDC9jmTQ"
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWRmNGZiODVmMDkwZTJmNmU3YjAyMCIsInVzZXJuYW1lIjoiYsO2cmplIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NTE0MDczLCJleHAiOjE3MTc1MTQ2NzN9.JjAJq7QVQfKm2YyyCSVApftJeH47k1PZivMKtFOpra0"
 					}
 				],
 				"url": {
