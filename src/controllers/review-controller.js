@@ -11,6 +11,22 @@ async function addAReviewToAMovie(req, res) {
         "MovieId, userId, rating, comment or creation date are missing or incorrect",
     });
   }
+
+  //Checking so that the user is posting under his own id.
+  const token = req.header("Authorization");
+  const decoded = jwt.verify(
+    token.replace("Bearer ", ""),
+    process.env.JWT_SECRET
+  );
+  req.user = decoded;
+  if (!(userId == req.user.id)) {
+    return res.status(400).json({
+      Succcess: false,
+      Error: `You can only post reviews with your own id.`,
+    });
+  }
+  //
+
   const movieToReview = await movies.findById(movieId);
   if (!movieToReview) {
     return res.status(400).json({
@@ -80,7 +96,7 @@ async function getAllReviews(req, res) {
 
 async function getAllReviewsForAMovie(req, res) {
   const allReviewsForAMovie = await reviews.find({ movieId: req.params.id });
-  console.log(allReviewsForAMovie.length);
+
   if (!allReviewsForAMovie) {
     return res
       .status(400)
@@ -89,7 +105,7 @@ async function getAllReviewsForAMovie(req, res) {
   if (allReviewsForAMovie.length == 0) {
     return res.status(200).json({
       Succcess: true,
-      Message: `The movie has no reviews.`,
+      Message: `That movie has no reviews.`,
     });
   }
 
@@ -145,6 +161,13 @@ async function getAReview(req, res) {
 
 async function updateAReview(req, res) {
   const { rating, comment } = req.body;
+  if (rating > 10 || rating <= 0) {
+    return res.status(400).json({
+      Succcess: false,
+      error: "Rating has a max limit of 10 and lower value of 1.",
+    });
+  }
+
   const token = req.header("Authorization");
   const decoded = jwt.verify(
     token.replace("Bearer ", ""),
@@ -152,20 +175,7 @@ async function updateAReview(req, res) {
   );
   req.user = decoded;
 
-  try {
-    const reviewUserId = await reviews.findById(req.params.id);
-    if (!reviewUserId) {
-      return res
-        .status(400)
-        .json({ Succcess: false, Error: `Could not get the review` });
-    }
-  } catch (error) {
-    res.status(401).json({
-      Succcess: false,
-      Message: "You can only update your own reviews.",
-    });
-  }
-
+  const reviewUserId = await reviews.findById(req.params.id);
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     if (!rating || !comment) {
       return res.status(400).json({
@@ -187,7 +197,7 @@ async function updateAReview(req, res) {
       });
       if (result) {
         res.status(200).json({
-          Succcess: false,
+          Succcess: true,
           message: "Review was updated!",
         });
       } else {
@@ -215,7 +225,7 @@ async function deleteAReview(req, res) {
     process.env.JWT_SECRET
   );
   req.user = decoded;
-
+  const reviewUserId = await reviews.findById(req.params.id);
   if (req.user.id == reviewUserId.userId || req.user.role == "admin") {
     const result = await reviews.findByIdAndDelete(req.params.id).exec();
     if (!result) {
